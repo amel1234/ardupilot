@@ -1,0 +1,236 @@
+[33mcommit 3f1fbbf6c66945a6b0f16ff7d6ccf4d22d8e7cd1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Michael du Breuil <wicked.shell.scripts@gmail.com>
+Date:   Fri Feb 22 15:46:59 2019 -0700
+
+    AP_Logger: simplify the message writers
+    
+    Specifically:
+      - Remove some unreachable nullptr checks
+      - Remove a noop stage
+      - Remove unneeded initilizers
+
+[33mcommit f19b831bc31e1815f2c7e5543e1c6575f22211ea[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Sat Mar 23 15:30:34 2019 +1100
+
+    Tools: autotest: add brake mode test
+
+[33mcommit aca1651488d3f94bdc0b4d9b6652205f326e1654[m
+Author: yaapu <alex.apostoli@gmail.com>
+Date:   Thu Mar 21 15:54:39 2019 +0100
+
+    AP_Frsky_Telem: fix ap_status_timer handling
+    
+    method should return only after ap_status_timer has elapsed and vehicle is initialized
+    otherwise we waste a chance to send a packet
+
+[33mcommit 9cab607d0a1116b48b15f1de94f35593e744f2b6[m
+Author: Dr Nic Williams <drnicwilliams@gmail.com>
+Date:   Sat Mar 23 15:19:17 2019 +1100
+
+    Tools: pexpect python dependency used by autotest
+
+[33mcommit d4fe65b43c238820d2d035912f6e207ebf2d9e88[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Mar 19 16:24:31 2019 +1100
+
+    Tools: Replay: remove definition of Devo constructor
+
+[33mcommit 513a635ff72e3b6080449d6250f3d98c9f9d0456[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Mar 19 16:23:30 2019 +1100
+
+    Sub: remove definition of Devo constructor
+
+[33mcommit 65e6875acf7e372db95e7f6c3ee4616aa342a11f[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Mar 19 16:01:04 2019 +1100
+
+    Tracker: remove definition of Devo constructor
+
+[33mcommit fc54f27c1c0f38440243ed7ffb57db87fbab0dde[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Feb 13 16:01:12 2019 +1100
+
+    AP_Devo_Telem: use stack for packet construction
+
+[33mcommit 2dae64328077e7096504b269e711d2f559017313[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 18:04:24 2019 +1100
+
+    AC_PID: update example to stop shadowing global chibios variable
+
+[33mcommit 26c01accb96f8f6ca68cda7f7ae53177fb3221fd[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 16:47:39 2019 +1100
+
+    AP_HAL_SITL: remove unused from method
+
+[33mcommit 649130adcb9919cf715c12bb93b90df2d5b3ae95[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 15:31:14 2019 +1100
+
+    AP_Common: uniqify semaphore names
+
+[33mcommit e6a1789df86f2c3e3e5d046b1558a7d185cc65b2[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Mar 19 22:00:29 2019 +1100
+
+    Tools: ardupilotwaf: make shadowed variables fatal on all platforms
+
+[33mcommit a23a60d1ea401dbcecb5723591bce4bb8fedee26[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 13:37:22 2019 +1100
+
+    wscript: add option to enable sfml audio
+
+[33mcommit 0b376f1f14fb26849237b6ac6b5498bfc211b097[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 13:36:41 2019 +1100
+
+    Tools: autotest: add --tonealarm option to sim_vehicle.py
+
+[33mcommit a1088f6cd6998b3e44e673b9f8254f69ac8861a0[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 13:19:41 2019 +1100
+
+    AP_HAL_SITL: add support for ToneAlarm via sfml
+
+[33mcommit 22bf7817e122b2dae7299abed50cf29f5462da9e[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 13:09:14 2019 +1100
+
+    AP_Notify: include AP_ToneAlarm for SITL
+
+[33mcommit 156d580bcd5fdb2f2bda1f752cd62666a6135504[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Wed Mar 20 13:08:51 2019 +1100
+
+    Tools: ardupilotwaf: include sfml-audio
+
+[33mcommit 9c26b5bb9c50f3baeafe1e0d4e83d71bb9d3ccc4[m
+Author: HITMAnsOFT <sy_arthur@yahoo.com>
+Date:   Thu Dec 20 13:01:48 2018 +0400
+
+    AP_Mount: fix SToRM32 Serial protocol delay
+    
+    The packets to a SToRM32 gimbal were being sent at 1s intervals when in MAVLINK targeting mode.
+    We need to send them faster or smooth targetting is impossible.
+
+[33mcommit 70c14140262694bf94a160ac74a3e4b872e02ab5[m
+Author: Luis Vale Gonçalves <lvale@users.noreply.github.com>
+Date:   Wed Mar 20 08:48:02 2019 +0000
+
+    FrSky: Adjusted offsets
+    
+    Following up on @yaapu comment https://github.com/ArduPilot/ardupilot/pull/10499#issuecomment-474625077
+
+[33mcommit 16476332b2d3fd4f90a2d55daf433dc61517a37a[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Thu Mar 21 11:15:11 2019 +1100
+
+    Tools: autotest: fix no-gps switch-to-location test
+
+[33mcommit 1e2cf4bb604ce4be996023aa9e32a895d5a4f65a[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Thu Mar 21 16:29:05 2019 +1100
+
+    Tools: autotest: fix sethome test under Python3
+
+[33mcommit ee690e7ab92629a84e173a01baf1e7bd439e6ae1[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Aug 7 20:22:21 2018 +1000
+
+    AP_Logger: use AP_InternalError for tracking internal errors
+
+[33mcommit b3203601f30e45e19115658535247b107f8f3fa4[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Aug 7 20:00:42 2018 +1000
+
+    GCS_MAVLink: send internal errors as bitmask in sys_status
+
+[33mcommit 422aa8ad7e5bafaa33885160649ec7b4de9d4c23[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Aug 7 20:00:10 2018 +1000
+
+    DataFlash: include internal errors in dataflash PM message
+
+[33mcommit d762629c62c44fd677d30ae352f739e8365fb9ef[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Mon Mar 18 22:26:39 2019 +1100
+
+    Tools: waf: link AP_InternalError everywhere
+
+[33mcommit 82f8a7fa1bfa095b91d093d9b6ce73688d29a0f2[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Tue Aug 7 19:59:37 2018 +1000
+
+    AP_Scheduler: include internal errors in dataflash PM message
+
+[33mcommit 2e885739e3ce41c9b57e82e11a27ece74eb3c70c[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Mon Mar 18 22:32:42 2019 +1100
+
+    AP_InternalError: add singleton for tracking internal errors
+
+[33mcommit 437918633382c0af484b0f865455cf632bf9c0ec[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Thu Mar 21 18:49:37 2019 +1100
+
+    Tools: scripts: remove dated directories from manifest
+
+[33mcommit 71af938a1235bb2c37287acafed2e349400ae58f[m
+Author: Jonathan Challinger <mr.challinger@gmail.com>
+Date:   Mon Jun 18 12:47:57 2018 -0700
+
+    AP_UAVCAN: use fixed-size memory pool
+
+[33mcommit 4a334d0ed799b9dd6510badf28b4226fff889297[m
+Author: Andrew Tridgell <andrew@tridgell.net>
+Date:   Thu Mar 21 17:48:40 2019 +1100
+
+    AP_IneertialSensor: fixed startup race in SITL
+
+[33mcommit 0a718ba330447404d7e94cebb9273da254138e70[m
+Author: Andrew Tridgell <andrew@tridgell.net>
+Date:   Thu Mar 14 16:47:45 2019 +1100
+
+    AP_IneertialSensor: fixed orientations and gyro scale factors for new Invensense IMUs
+
+[33mcommit 8c2d3945defa92ae4d93d4697fb504c4a6e10bc3[m
+Author: Siddharth Purohit <siddharthbharatpurohit@gmail.com>
+Date:   Mon Mar 11 18:26:40 2019 +0530
+
+    AP_IneertialSensor: add support for custom accel scale
+    
+    adds support for 30g measurement on ICM20649
+
+[33mcommit 3a833d9a90191f606210bb62b9720152fed8eaa9[m
+Author: Siddharth Purohit <siddharthbharatpurohit@gmail.com>
+Date:   Mon Mar 11 18:24:10 2019 +0530
+
+    AP_InertialSensor: fix rotation for ICM20649
+
+[33mcommit bc97ee5498db2b73783f890653b0a98e776cea5b[m
+Author: Siddharth Purohit <siddharthbharatpurohit@gmail.com>
+Date:   Mon Mar 11 18:23:35 2019 +0530
+
+    Tools: fix uploader for macos systems
+
+[33mcommit 4e151197a89a3d693ba60e7fd2376938f2e53f5b[m
+Author: Peter Barker <pbarker@barker.dropbear.id.au>
+Date:   Thu Mar 21 15:49:57 2019 +1100
+
+    AP_Logger: log units and multipliers correctly
+
+[33mcommit 2ec470aaee68b6a19fa75cff17147ec5a26e76bb[m
+Author: bnsgeyer <bnsgeyer@aol.com>
+Date:   Sat Mar 16 23:04:13 2019 -0400
+
+    Copter:tradheli - added swash params to convert on upgrade
+
+[33mcommit 01bd99907b3f397d1add96950d239700ee2cf908[m
+Author: bnsgeyer <bnsgeyer@aol.com>
+Date:   Sat Mar 16 10:20:04 2019 -0400
+
+    AP_Motors:Tradh
